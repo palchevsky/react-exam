@@ -1,0 +1,42 @@
+.input-wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.input-wrapper.hidden{
+  padding: 0;
+}
+
+label{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.label--fromSubmit{
+  padding: 0;
+}
+
+input{
+  min-width: 300px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: 2px solid blueviolet;
+  margin-left: 20px;
+
+}
+
+.input--fromSubmit{
+  width: 100%;
+  margin-left: -15px;
+  background: rebeccapurple;
+  color: antiquewhite;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.input--invalid{
+  border-color: red;
+}

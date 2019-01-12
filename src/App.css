@@ -1,0 +1,48 @@
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.modal-section {
+  background-color: #282c34;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header{
+  text-align: center;
+  background: rgb(168, 68, 163);
+  padding: 50px 20px;
+}
+
+.header__desktop-nav-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo__wrapper{
+  width: 120px;
+  font-size: 24px;
+  background: gold;
+  border-radius: 10px;
+  border: 2px solid sienna;
+  text-transform: uppercase;
+}
+
+.logo__top{
+  font-weight: bold;
+}
+
+
+
+

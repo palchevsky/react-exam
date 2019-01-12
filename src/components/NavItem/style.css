@@ -1,0 +1,15 @@
+.nav-item{
+  list-style-type: none;
+  margin: 10px 5px;  
+}
+
+.nav-link{
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+.nav-link:hover{
+  background: brown;
+}

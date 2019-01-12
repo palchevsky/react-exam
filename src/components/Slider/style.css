@@ -1,0 +1,24 @@
+.slide-section{
+  padding: 50px 0;
+}
+
+.portfolio__slide-section{
+  background: lightcoral;
+}
+
+
+.notice__slide-section{
+  background: lightskyblue;
+}
+
+
+.slide-wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.dottes-wrapper{
+  margin: 0 auto;
+  width: 300px;
+  text-align: center;
+}

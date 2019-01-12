@@ -1,0 +1,12 @@
+.slide-layout{
+  display:none;
+  width: 80%;
+  min-height: 50vh;
+  margin: 0 auto;
+  background: no-repeat center center;
+  background-size: cover;
+}
+
+.slide-layout.current{
+  display:block;
+}

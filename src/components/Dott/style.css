@@ -1,0 +1,10 @@
+.slide-dott{
+  border-radius: 50%;
+  width:30px;
+  height:30px;
+}
+
+.slide-dott.current{
+  background: red;
+  
+}

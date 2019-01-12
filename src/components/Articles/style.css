@@ -1,0 +1,29 @@
+.articles__list{
+  padding: 50px 0;
+}
+
+.articles--heading{
+  font-size: 40px;
+}
+
+.articles--wrapper{
+  border-left: 1px solid rgb(230, 36, 36);
+  padding-left: 30px;
+}
+
+.offer__articles--list{
+  background: rgb(74, 66, 187);
+}
+
+.merits__articles--list{
+  background: rgb(66, 187, 86);
+}
+
+.procedure__articles--list{
+  background: rgb(38, 89, 146);
+}
+
+.price__articles--list{
+  background: rgb(46, 45, 54);
+}
+

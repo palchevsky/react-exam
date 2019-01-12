@@ -1,0 +1,16 @@
+.button{
+  border-radius: 100px;
+  margin: 10px;
+  background: lawngreen;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.form-button{
+  background: red;
+}
+
+.button.disabled {
+  background: #666;
+  pointer-events: none;
+}
