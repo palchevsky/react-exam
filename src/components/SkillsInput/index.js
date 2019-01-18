@@ -7,7 +7,9 @@ class SkillsInput extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    //this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.onDeleteLineHandler = props.onDeleteLineHandler;
+    this.onAddLineHandler = props.onAddLineHandler;
+    this.onChangeHandler = props.onChangeHandler;
   }
 
   render() {
@@ -22,9 +24,6 @@ class SkillsInput extends Component {
       validState,
       inputs = [],
       valid,
-      onDeleteLineHandler,
-      onAddLineHandler,
-      onChangeHandler
     } = this.props;
 
     const Inputs = lineIndex =>
@@ -36,7 +35,7 @@ class SkillsInput extends Component {
           key={index}
           option={inputProp.option}
           value={valuesState[lineIndex][inputProp.option]}
-          onChangeHandler={onChangeHandler}
+          onChangeHandler={this.onChangeHandler}
           valid={validState[lineIndex][inputProp.option]}
         />
       ));
@@ -46,7 +45,7 @@ class SkillsInput extends Component {
         {Inputs(index)}
         <Button
           buttonText="delete"
-          clickHandler={onDeleteLineHandler}
+          clickHandler={this.onDeleteLineHandler}
           section="form"
         />
       </div>
@@ -59,20 +58,9 @@ class SkillsInput extends Component {
         {SkillsLine}
         <Button
           buttonText="+"
-          clickHandler={onAddLineHandler}
+          clickHandler={this.onAddLineHandler}
           section="form"
         />
-        {/* <Button
-          buttonText="закрыть"
-          clickHandler={() => onToggleModal(use)}
-          section="form"
-        /> */}
-        {/* <form
-          className={`${section}__form form ${valid ? "disabled" : ""}`}
-          onSubmit={e => this.handleSubmit(e)}
-        >
-          {Inputs}
-        </form> */}
       </section>
     );
   }
@@ -83,40 +71,6 @@ class SkillsInput extends Component {
     this.submit();
     onToggleModal(use);
   }
-
-  // onChangeHandler = (event, index, option) => {
-  //   let valuesState = this.props.valuesState;
-  //   let validState = this.props.validState;
-  //   console.log("----->>>>", option, valuesState);
-  //   valuesState[index][option] = event.target.value;
-  //   validState[index][option] = event.target.value !== "" ? true : false;
-
-  //   this.setState({ valuesState, validState });
-  // };
-
-  // onAddLineHandler = () => {
-  //   this.setState({
-  //     valuesState: [
-  //       ...this.props.valuesState,
-  //       { skill: "", level: "", years: 0 }
-  //     ],
-  //     validState: [
-  //       ...this.props.validState,
-  //       { skill: false, level: false, years: false }
-  //     ]
-  //   });
-  // };
-
-  // onDeleteLineHandler = index => {
-  //   let valuesState = this.props.valuesState;
-  //   let validState = this.props.validState;
-  //   valuesState.splice(index, 1);
-  //   validState.splice(index, 1);
-  //   this.setState({
-  //     valuesState: valuesState,
-  //     validState: validState
-  //   });
-  // };
 
   submit() {
     const { inputs } = this.props;
