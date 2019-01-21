@@ -7,15 +7,13 @@ class App extends Component {
     super(props);
 
     this.state = {
-      valuesState: [
-        { skill: "", level: "", years: 0 },
-        { skill: "", level: "", years: 0 }
-      ],
-      validState: [
-        { skill: false, level: false, years: false },
-        { skill: false, level: false, years: false }
-      ]
+      valuesState: [{ skill: "", level: "", years: 0 }],
+      validState: [{ skill: false, level: false, years: false }]
     };
+
+    this.onDeleteLineHandler = this.onDeleteLineHandler.bind(this);
+    this.onAddLineHandler = this.onAddLineHandler.bind(this);
+    this.onChangeHandler = this.onChangeHandler.bind(this);
   }
 
   render() {
@@ -71,7 +69,7 @@ class App extends Component {
   onChangeHandler = (event, index, option) => {
     let valuesState = this.state.valuesState;
     let validState = this.state.validState;
-    // console.log("----->>>>", option, valuesState);
+    console.log("----->>>>", this.state);
     valuesState[index][option] = event.target.value;
     validState[index][option] = event.target.value !== "" ? true : false;
 

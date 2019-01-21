@@ -7,9 +7,6 @@ class SkillsInput extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.onDeleteLineHandler = props.onDeleteLineHandler;
-    this.onAddLineHandler = props.onAddLineHandler;
-    this.onChangeHandler = props.onChangeHandler;
   }
 
   render() {
@@ -22,8 +19,11 @@ class SkillsInput extends Component {
       inputProps,
       valuesState,
       validState,
+      onChangeHandler,
+      onAddLineHandler,
+      onDeleteLineHandler,
       inputs = [],
-      valid,
+      valid
     } = this.props;
 
     const Inputs = lineIndex =>
@@ -35,7 +35,7 @@ class SkillsInput extends Component {
           key={index}
           option={inputProp.option}
           value={valuesState[lineIndex][inputProp.option]}
-          onChangeHandler={this.onChangeHandler}
+          onChangeHandler={e => onChangeHandler(e, lineIndex, inputProp.option)}
           valid={validState[lineIndex][inputProp.option]}
         />
       ));
@@ -45,22 +45,18 @@ class SkillsInput extends Component {
         {Inputs(index)}
         <Button
           buttonText="delete"
-          clickHandler={this.onDeleteLineHandler}
+          clickHandler={onDeleteLineHandler}
           section="form"
         />
       </div>
     ));
 
     return (
-      <section className="modal-section">
+      <section className="skills-section">
         <h2 className={`${section}__heading`}>{heading}</h2>
         <p className={`${section}__intro`}>{intro}</p>
         {SkillsLine}
-        <Button
-          buttonText="+"
-          clickHandler={this.onAddLineHandler}
-          section="form"
-        />
+        <Button buttonText="+" clickHandler={onAddLineHandler} section="form" />
       </section>
     );
   }
